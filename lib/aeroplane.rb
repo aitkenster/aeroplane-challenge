@@ -8,8 +8,8 @@ class Aeroplane
 		@flying
 	end
 
-	def land
-		@flying = false
+	def land_dependent_on(weather)
+		@flying = false if !weather.storm?
 	end
 
 end
