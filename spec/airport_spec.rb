@@ -21,6 +21,10 @@ describe 'airport' do
 		expect(heathrow.planes.count).to eq 1
 	end
 
-
+it 'should have one less plane when a plan takes off' do 
+	heathrow.land(boeing)
+	heathrow.take_off(boeing)
+	expect(heathrow.planes.count).to eq 0
+end
 
 end
