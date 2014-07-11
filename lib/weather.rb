@@ -16,4 +16,5 @@ class Weather
 		@storm = true if(weather_rand > 6)
 	end
 
+
 end
