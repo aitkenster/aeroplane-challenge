@@ -9,8 +9,8 @@ describe 'weather' do
 	end
 
 	it 'should be stormy 3 times in 10' do
-
-		allow(today.weather_odds).to receive(:rand) {8}
+		allow(today).to receive(:weather_rand).and_return(8)
+		today.weather_odds
 		expect(today.storm?).to be true
 
 	end

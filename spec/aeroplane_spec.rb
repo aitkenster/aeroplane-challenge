@@ -19,7 +19,6 @@ describe 'aeroplane' do
 	it 'should not be able to land if the weather is stormy' do
 		boeing.land_dependent_on(stormy)
 		expect(boeing.flying?).to be true
-
 	end
 
 	it 'should be able to take-off if the weather is not stormy' do
