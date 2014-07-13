@@ -6,6 +6,7 @@ module Weather
 	end
 
 	def storm?
+		weather_rand
 		weather_odds
 		@storm
 	end
