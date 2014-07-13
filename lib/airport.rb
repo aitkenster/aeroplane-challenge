@@ -18,10 +18,12 @@ class Airport
 
 	def land(aeroplane)
 		planes << aeroplane
+		aeroplane.parked!
 	end 	     
 
 	def take_off(aeroplane)
 		planes.delete(aeroplane)
+		aeroplane.flying!
 	end
 
 end
