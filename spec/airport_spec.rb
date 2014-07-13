@@ -7,7 +7,6 @@ describe 'airport' do
 	# let(:sunny) {double :weather, storm?: false}
 	
 	it 'should have no planes when created' do
-		heathrow = Airport.new
 		expect(heathrow.has_planes?).to be false
 	end
 
@@ -28,5 +27,8 @@ describe 'airport' do
 		expect(heathrow.planes.count).to eq 0
 	end
 
-	it 'should'
+	it 'should not let a plane land if it is at capacity' do
+		10.times {heathrow.land(boeing)}
+		expect{heathrow.land(boeing)}.to raise_error(RuntimeError)
+	end
 end

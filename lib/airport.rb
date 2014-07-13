@@ -17,6 +17,7 @@ class Airport
 	end
 
 	def land(aeroplane)
+		raise "Airport is full!" if is_full?
 		planes << aeroplane
 		aeroplane.parked!
 	end 	     
@@ -24,6 +25,10 @@ class Airport
 	def take_off(aeroplane)
 		planes.delete(aeroplane)
 		aeroplane.flying!
+	end
+
+	def is_full?
+		planes.count == capacity
 	end
 
 end
