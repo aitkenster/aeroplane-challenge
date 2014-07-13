@@ -6,17 +6,21 @@ module Weather
 	end
 
 	def storm?
-		weather_rand
 		weather_odds
 		@storm
 	end
 
 	def weather_rand
-			rand(10)
+		@weather_rand
 	end
 
 	def weather_odds
-		@storm = true if(weather_rand > 6)
+		@weather_rand = rand(10)
+		if(@weather_rand > 6)
+			@storm = true
+		else
+			@storm = false
+		end
 	end
 
 
