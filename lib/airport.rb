@@ -1,6 +1,11 @@
+require_relative 'weather'
+
 class Airport
 
+	include Weather
+
 	def initialize
+		super()
 		@planes = []
 	end
 
@@ -16,13 +21,15 @@ class Airport
 		@planes
 	end
 
-	def land(aeroplane)
+	def land(aeroplane, weather)
 		raise "Airport is full!" if is_full?
+		return "It's too stormy to land right now" if weather.storm?
 		planes << aeroplane
 		aeroplane.parked!
 	end 	     
 
-	def take_off(aeroplane)
+	def take_off(aeroplane, weather)
+		return "It's too stormy to take-off right now" if weather.storm?
 		planes.delete(aeroplane)
 		aeroplane.flying!
 	end
