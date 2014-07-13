@@ -1,7 +1,7 @@
 require 'airport'
 require './spec/weather_spec.rb'
 
-describe 'airport' do
+describe Airport do
 
 	
 

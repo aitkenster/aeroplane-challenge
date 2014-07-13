@@ -2,7 +2,7 @@ require 'weather'
 
 shared_examples 'the weather' do
 
-	let(:location) { Airport.new }
+	let(:location) { described_class.new }
 
 	it 'should have a default weather of sunny' do
 		expect(location.storm?).to be false
