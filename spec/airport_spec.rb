@@ -20,8 +20,8 @@ describe Airport do
 			expect(heathrow.has_planes?).to be false
 		end
 
-		it 'has a capacity of 10 planes' do
-			expect(heathrow.capacity).to eq 10
+		it 'has a capacity of 6 planes' do
+			expect(heathrow.capacity).to eq 6
 		end
 
 		it 'should have one plane when a plane lands' do
@@ -45,7 +45,7 @@ end
 
 		it 'should not let a plane land if it is at capacity' do
 			allow(heathrow).to receive(:storm?).and_return(false)
-			10.times {heathrow.land(boeing)}
+			6.times {heathrow.land(boeing)}
 			expect{heathrow.land(boeing)}.to raise_error(RuntimeError)
 		end
 
@@ -61,16 +61,7 @@ end
 			gatwick.take_off(boeing)
 			expect(gatwick.planes.count).to eq 1
 		end
-end
 
-# grand final
-# Given 6 planes, each plane must land. When the airport is full, every plane must take off again.
-# Be careful of the weather, it could be stormy!
-# Check when all the planes have landed that they have the right status "landed"
-# Once all the planes are in the air again, check that they have the status of flying!
-  it 'all planes can land and all planes can take off' do
-  
-
-  end
-
+	end
+	
 end

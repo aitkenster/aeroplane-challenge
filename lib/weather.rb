@@ -11,12 +11,12 @@ module Weather
 	end
 
 	def weather_rand
-		@weather_rand
+		rand(10)
+		self
 	end
 
 	def weather_odds
-		@weather_rand = rand(10)
-		if(@weather_rand > 6)
+		if(weather_rand > 6)
 			@storm = true
 		else
 			@storm = false

@@ -14,7 +14,7 @@ class Airport
 	end
 
 	def capacity
-		@capacity = 10
+		@capacity = 6
 	end
 
 	def planes
