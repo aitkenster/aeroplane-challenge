@@ -21,15 +21,15 @@ class Airport
 		@planes
 	end
 
-	def land(aeroplane, weather)
+	def land(aeroplane)
 		raise "Airport is full!" if is_full?
-		return "It's too stormy to land right now" if weather.storm?
+		return "It's too stormy to land right now" if storm?
 		planes << aeroplane
 		aeroplane.parked!
 	end 	     
 
-	def take_off(aeroplane, weather)
-		return "It's too stormy to take-off right now" if weather.storm?
+	def take_off(aeroplane)
+		return "It's too stormy to take-off right now" if storm?
 		planes.delete(aeroplane)
 		aeroplane.flying!
 	end
