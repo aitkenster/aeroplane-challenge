@@ -1,5 +1,4 @@
 module Weather
-	attr_reader :storm
 
 	def initialize
 		@storm ||= DEFAULT_STORMY
@@ -22,7 +21,6 @@ module Weather
 			@storm = false
 		end
 	end
-
 
 	DEFAULT_STORMY = false
 

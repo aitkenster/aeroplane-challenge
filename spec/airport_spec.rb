@@ -4,10 +4,7 @@ require 'weather'
 
 describe Airport do
 
-	
-
 	let(:heathrow) {Airport.new}
-	let(:gatwick) {Airport.new}
 	let(:boeing) {double :Aeroplane, flying?: false, parked!: nil, flying!: nil}
 	let(:sunny) {double :Weather, storm?: false}
 	let(:stormy) {double :Weather, storm?: true}
@@ -50,16 +47,16 @@ end
 		end
 
 		it 'should not let a plane land if it is stormy' do
-			allow(gatwick).to receive(:storm?).and_return(true)
-			gatwick.land(boeing)
-			expect(gatwick.planes.count).to eq 0
+			allow(heathrow).to receive(:storm?).and_return(true)
+			heathrow.land(boeing)
+			expect(heathrow.planes.count).to eq 0
 		end
 
 		it 'should not let a plane take-off if it is stormy' do
-			gatwick.planes << boeing
-			allow(gatwick).to receive(:storm?).and_return(true)
-			gatwick.take_off(boeing)
-			expect(gatwick.planes.count).to eq 1
+			heathrow.planes << boeing
+			allow(heathrow).to receive(:storm?).and_return(true)
+			heathrow.take_off(boeing)
+			expect(heathrow.planes.count).to eq 1
 		end
 
 	end
