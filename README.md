@@ -11,7 +11,9 @@ Week 3 Friday Challenge at Makers Academy - write a program to control planes ta
 
 ###Technologies used
 
-+
++ Ruby
++ RSPEC
++ Git
 
 ###How to set it up
 
