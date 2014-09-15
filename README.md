@@ -1,12 +1,3 @@
-
-===================
-
-
-
-Task:
-
-Imagine you're writing software to control the flow of planes at an airport. 
-
 Airport
 =======
 
